@@ -134,19 +134,19 @@ public class empresasJava {
         double contadorRespondeAltaEmpresa4 = 0.0;
         double contadorRespondeBajaEmpresa4 = 0.0;
 
-         // Comunicacion - Empresa 1
+        // Comunicacion - Empresa 1
         double contadorComunicacionAltaEmpresa1 = 0.0;
         double contadorComunicacionBajaEmpresa1 = 0.0;
- 
-         // Comunicacion - Empresa 2
+
+        // Comunicacion - Empresa 2
         double contadorComunicacionAltaEmpresa2 = 0.0;
         double contadorComunicacionBajaEmpresa2 = 0.0;
- 
-         // Comunicacion - Empresa 3
+
+        // Comunicacion - Empresa 3
         double contadorComunicacionAltaEmpresa3 = 0.0;
         double contadorComunicacionBajaEmpresa3 = 0.0;
- 
-         // Comunicacion - Empresa 4
+
+        // Comunicacion - Empresa 4
         double contadorComunicacionAltaEmpresa4 = 0.0;
         double contadorComunicacionBajaEmpresa4 = 0.0;
 
@@ -190,69 +190,155 @@ public class empresasJava {
         double contadorAccionRankingSeMantieneEmpresa4 = 0.0;
         double contadorAccionRankingBajaEmpresa4 = 0.0;
 
-
         for (i = 0; i < matrizValores.length; i++) {
-         
-            //-----Empresa 1(matrizValores[i][0]==1)-----
-            
-            // Satisfaccion - Alta 
-            if (matrizValores[i][1] == (1) && matrizValores[i][0] == (1)) { 
+
+            // -----Empresa 1(matrizValores[i][0]==1)-----
+
+            // Satisfaccion - Alta
+            if (matrizValores[i][1] == (1) && matrizValores[i][0] == (1)) {
                 contadorSatisfaccionAltaEmpresa1++;
             }
 
-            // Satisfaccion - Media 
-            if (matrizValores[i][1] == (2) && matrizValores[i][0] == (1)) { 
+            // Satisfaccion - Media
+            if (matrizValores[i][1] == (2) && matrizValores[i][0] == (1)) {
                 contadorSatisfaccionMediaEmpresa1++;
             }
 
-            // Satisfaccion - Baja 
-            if (matrizValores[i][1] == (3) && matrizValores[i][0] == (1)) { 
+            // Satisfaccion - Baja
+            if (matrizValores[i][1] == (3) && matrizValores[i][0] == (1)) {
                 contadorSatisfaccionBajaEmpresa1++;
             }
 
-            // Calidad - Alta 
-            if (matrizValores[i][2] == (1) && matrizValores[i][0] == (1)) { 
+            // Calidad - Alta
+            if (matrizValores[i][2] == (1) && matrizValores[i][0] == (1)) {
                 contadorCalidadAltaEmpresa1++;
             }
-           
-            // Calidad - Media 
-            if (matrizValores[i][2] == (2) && matrizValores[i][0] == (1)) { 
+
+            // Calidad - Media
+            if (matrizValores[i][2] == (2) && matrizValores[i][0] == (1)) {
                 contadorCalidadMediaEmpresa1++;
             }
 
-            // Calidad - Baja 
-            if (matrizValores[i][2] == (3) && matrizValores[i][0] == (1)) { 
+            // Calidad - Baja
+            if (matrizValores[i][2] == (3) && matrizValores[i][0] == (1)) {
                 contadorCalidadBajaEmpresa1++;
             }
 
-            // Responde - Alta 
-            if (matrizValores[i][3] == (1) && matrizValores[i][0] == (1)) { 
+            // Responde - Alta
+            if (matrizValores[i][3] == (1) && matrizValores[i][0] == (1)) {
                 contadorRespondeAltaEmpresa1++;
             }
-        
-            // Responde - Baja 
-            if (matrizValores[i][3] == (2) && matrizValores[i][0] == (1)) { 
+
+            // Responde - Baja
+            if (matrizValores[i][3] == (2) && matrizValores[i][0] == (1)) {
                 contadorRespondeBajaEmpresa1++;
             }
 
-            // Comunicacion - Alta 
-            if (matrizValores[i][4] == (1) && matrizValores[i][0] == (1)) { 
+            // Comunicacion - Alta
+            if (matrizValores[i][4] == (1) && matrizValores[i][0] == (1)) {
                 contadorComunicacionAltaEmpresa1++;
             }
-        
-            // Comunicacion - Baja 
-            if (matrizValores[i][4] == (2) && matrizValores[i][0] == (1)) { 
+
+            // Comunicacion - Baja
+            if (matrizValores[i][4] == (2) && matrizValores[i][0] == (1)) {
                 contadorComunicacionBajaEmpresa1++;
             }
-          
+
+            // Accion - Alta
+            if (matrizValores[i][5] == (1) && matrizValores[i][0] == (1)) {
+                contadorAccionRankinSubeEmpresa1++;
+            }
+
+            // Accion - Media
+            if (matrizValores[i][5] == (2) && matrizValores[i][0] == (1)) {
+                contadorAccionRankingSeMantieneEmpresa1++;
+            }
+
+            // Accion - Baja
+            if (matrizValores[i][5] == (3) && matrizValores[i][0] == (1)) {
+                contadorAccionRankingBajaEmpresa1++;
+            }
+
+            // -----Empresa 2(matrizValores[i][0]==2)-----
+
+            // Satisfaccion - Alta
+            if (matrizValores[i][1] == (1) && matrizValores[i][0] == (2)) {
+                contadorSatisfaccionAltaEmpresa2++;
+            }
+
+            // Satisfaccion - Media
+            if (matrizValores[i][1] == (2) && matrizValores[i][0] == (2)) {
+                contadorSatisfaccionMediaEmpresa2++;
+            }
+
+            // Satisfaccion - Baja
+            if (matrizValores[i][1] == (3) && matrizValores[i][0] == (2)) {
+                contadorSatisfaccionBajaEmpresa2++;
+            }
+
+            // Calidad - Alta
+            if (matrizValores[i][2] == (1) && matrizValores[i][0] == (2)) {
+                contadorCalidadAltaEmpresa2++;
+            }
+
+            // Calidad - Media
+            if (matrizValores[i][2] == (2) && matrizValores[i][0] == (2)) {
+                contadorCalidadMediaEmpresa2++;
+            }
+
+            // Calidad - Baja
+            if (matrizValores[i][2] == (3) && matrizValores[i][0] == (2)) {
+                contadorCalidadBajaEmpresa2++;
+            }
+
+            // Responde - Alta
+            if (matrizValores[i][3] == (1) && matrizValores[i][0] == (2)) {
+                contadorRespondeAltaEmpresa2++;
+            }
+
+            // Responde - Baja
+            if (matrizValores[i][3] == (2) && matrizValores[i][0] == (2)) {
+                contadorRespondeBajaEmpresa2++;
+            }
+
+            // Comunicacion - Alta
+            if (matrizValores[i][4] == (1) && matrizValores[i][0] == (2)) {
+                contadorComunicacionAltaEmpresa2++;
+            }
+
+            // Comunicacion - Baja
+            if (matrizValores[i][4] == (2) && matrizValores[i][0] == (2)) {
+                contadorComunicacionBajaEmpresa2++;
+            }
+
+            // Accion - Alta
+            if (matrizValores[i][5] == (1) && matrizValores[i][0] == (2)) {
+                contadorAccionRankinSubeEmpresa2++;
+            }
+
+            // Accion - Media
+            if (matrizValores[i][5] == (2) && matrizValores[i][0] == (2)) {
+                contadorAccionRankingSeMantieneEmpresa2++;
+            }
+
+            // Accion - Baja
+            if (matrizValores[i][5] == (3) && matrizValores[i][0] == (2)) {
+                contadorAccionRankingBajaEmpresa2++;
+            }
+
+
+            // -----Empresa 3(matrizValores[i][0]==3)-----
+
+            // -----Empresa 4(matrizValores[i][0]==4)-----
+
         }
 
         System.out.println(contadorComunicacionAltaEmpresa1);
         System.out.println(contadorComunicacionBajaEmpresa1);
         System.out.println(contadorCalidadBajaEmpresa1);
 
-         /* 
-       
+        /*
+         * 
          * //Cielo matrizFrecuenciaSi[0][0] = contadorSoleadoSi;
          * matrizFrecuenciaSi[1][0] = contadorNubladoSi; matrizFrecuenciaSi[2][0] =
          * contadorLluviosSi;
@@ -389,15 +475,12 @@ public class empresasJava {
     }
 
     public static double sumColumnas(double[][] matrizObjetivo) {
-
         int row;
         double total = 0.0;
         for (row = 0; row < matrizObjetivo.length; row++) {
             total += matrizObjetivo[row][0];
         }
-
         return total;
-
     }
 
     public static double determinarFactorProbabilidad(int paramCielo, int paramTemp, int paramHumedad, int paramViento,
