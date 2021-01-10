@@ -7,6 +7,32 @@ public class empresasJava {
 
     public static void main(String[] args) {
 
+        /*Parametros aceptados
+        * Satisfacción del cliente
+            *Alta: 1
+            *Media: 2
+            *Baja: 3   
+        * Calidad
+            *Alta: 1
+            *Media: 2
+            *Baja: 3 
+        * Responde necesidades del cliente
+            *Alta: 1
+            *Baja: 2 
+        * Comunicación permanente
+            *Alta: 1
+            *Baja: 2
+        * Precio
+            *Alta: 1
+            *Media: 2
+            *Baja: 3 
+        * Accion ranking
+            *Sube: 1
+            *Se mantiene: 2
+            *Baja: 3 
+        */
+
+
         /*
          * Esta matriz representa la tabla que se debe extraer de la base de datos que
          * por motivos practivos se utiliza una matriz para evitar utilizar una bd, se
@@ -21,12 +47,12 @@ public class empresasJava {
                 { 4, 3, 3, 2, 2, 3, 2 }, };
 
         // Parámetros que debe indicar el usuario que serán los que quiere averiguar
-        int paramSatisfaccion = 3;
-        int paramCalidad = 3;
-        int paramResponde = 1;
-        int paramComunicacion = 1;
-        int paramPrecio = 1;
-        int paramAccion = 1;
+        int paramSatisfaccion = 1; //Alta
+        int paramCalidad = 3; //Alta
+        int paramResponde = 1; //Baja
+        int paramComunicacion = 1; //
+        int paramPrecio = 1; //
+        int paramAccion = 1; //
 
         // Probabilidad de Empresas
         int cantidadEmpresa1;
@@ -120,7 +146,7 @@ public class empresasJava {
 
         // Responde - Empresa 1
         double contadorRespondeAltaEmpresa1 = 0.0;
-        double contadorRespondeBajaEmpresa1 = 0.0; 
+        double contadorRespondeBajaEmpresa1 = 0.0;
 
         // Responde - Empresa 2
         double contadorRespondeAltaEmpresa2 = 0.0;
@@ -408,7 +434,7 @@ public class empresasJava {
                 contadorComunicacionBajaEmpresa3++;
             }
 
-             // Precio - Alta
+            // Precio - Alta
             if (matrizValores[i][5] == (1) && matrizValores[i][0] == (3)) {
                 contadorPrecioAltaEmpresa3++;
             }
@@ -556,7 +582,6 @@ public class empresasJava {
             System.out.print("\n");
         }
 
-
         // Para empresa 2
         matrizFrecuenciaEmpresa2[0][0] = contadorSatisfaccionAltaEmpresa2;
         matrizFrecuenciaEmpresa2[1][0] = contadorSatisfaccionMediaEmpresa2;
@@ -656,64 +681,146 @@ public class empresasJava {
             System.out.print("\n");
         }
 
-        /*
-         * /*Comprobar si las matrices tienen algun valor 0 en caso que alguna tenga un
-         * valor 0 se debe normalizar la matriz
-         */
-        /*
-         * Boolean valorCeroSiJuega = encontrarValorCero(matrizFrecuenciaSi); Boolean
-         * valorCeroNoJuega = encontrarValorCero(matrizFrecuenciaNo);
-         * 
-         * //Se deben normalizar las matrices de frecuencia si se encuentra un 0;
-         * if(valorCeroSiJuega){
-         * System.out.println("------------------------------------------");
-         * System.out.println("Matriz normalizada para si se juega"); for (i = 0; i < 3;
-         * i++) { for (j = 0; j < 4; j++) { matrizFrecuenciaSi[i][j]+=1;
-         * System.out.printf("%f ", matrizFrecuenciaSi[i][j]); } System.out.print("\n");
-         * } }
-         * 
-         * if(valorCeroNoJuega){
-         * System.out.println("------------------------------------------");
-         * System.out.println("Matriz normalizada para no se juega"); for (i = 0; i < 3;
-         * i++) { for (j = 0; j < 4; j++) { matrizFrecuenciaNo[i][j]+=1;
-         * System.out.printf("%f ", matrizFrecuenciaNo[i][j]); } System.out.print("\n");
-         * } }
-         * 
-         * /*Se debe obtener la suma de una columna de ambas matrices para obtener la
-         * probabilidades respectivas para cada evento
-         */
+        // Comprobar si las matrices tienen algun valor 0 en caso que alguna tenga un
+        // valor 0 se debe normalizar la matriz
+
+        Boolean valorCeroEmpresa1 = encontrarValorCero(matrizFrecuenciaEmpresa1);
+        Boolean valorCeroEmpresa2 = encontrarValorCero(matrizFrecuenciaEmpresa2);
+        Boolean valorCeroEmpresa3 = encontrarValorCero(matrizFrecuenciaEmpresa3);
+        Boolean valorCeroEmpresa4 = encontrarValorCero(matrizFrecuenciaEmpresa4);
+
+        // Se deben normalizar las matrices de frecuencia si se encuentra un 0;
+        if (valorCeroEmpresa1) {
+            System.out.println("------------------------------------------");
+            System.out.println("Matriz normalizada empresa 1");
+            for (i = 0; i < 3; i++) {
+                for (j = 0; j < 6; j++) {
+                    matrizFrecuenciaEmpresa1[i][j] += 1;
+                    System.out.printf("%f ", matrizFrecuenciaEmpresa1[i][j]);
+                }
+                System.out.print("\n");
+            }
+        }
+
+        if (valorCeroEmpresa2) {
+            System.out.println("------------------------------------------");
+            System.out.println("Matriz normalizada empresa 2");
+            for (i = 0; i < 3; i++) {
+                for (j = 0; j < 6; j++) {
+                    matrizFrecuenciaEmpresa2[i][j] += 1;
+                    System.out.printf("%f ", matrizFrecuenciaEmpresa2[i][j]);
+                }
+                System.out.print("\n");
+            }
+        }
+
+        if (valorCeroEmpresa3) {
+            System.out.println("------------------------------------------");
+            System.out.println("Matriz normalizada empresa 3");
+            for (i = 0; i < 3; i++) {
+                for (j = 0; j < 6; j++) {
+                    matrizFrecuenciaEmpresa3[i][j] += 1;
+                    System.out.printf("%f ", matrizFrecuenciaEmpresa3[i][j]);
+                }
+                System.out.print("\n");
+            }
+        }
+
+        if (valorCeroEmpresa4) {
+            System.out.println("------------------------------------------");
+            System.out.println("Matriz normalizada empresa 4");
+            for (i = 0; i < 3; i++) {
+                for (j = 0; j < 6; j++) {
+                    matrizFrecuenciaEmpresa4[i][j] += 1;
+                    System.out.printf("%f ", matrizFrecuenciaEmpresa4[i][j]);
+                }
+                System.out.print("\n");
+            }
+        }
 
         /*
-         * double sumColMatrizSi = sumColumnas(matrizFrecuenciaSi); double
-         * sumColMatrizNo = sumColumnas(matrizFrecuenciaNo);
-         * 
-         * System.out.println("------------------------------------------"); //Matriz de
-         * probabilida para si
-         * System.out.println("Matriz de probabilidad para si se juega"); for (i = 0; i
-         * < 3; i++) { for (j = 0; j < 4; j++) { matrizProbabilidadSi[i][j] =
-         * (matrizFrecuenciaSi[i][j])/(sumColMatrizSi); System.out.printf("%f ",
-         * matrizProbabilidadSi[i][j]); } System.out.print("\n"); }
-         * 
-         * System.out.println("------------------------------------------"); //Matriz de
-         * probabilida para no
-         * System.out.println("Matriz de probabilidad para no se juega"); for (i = 0; i
-         * < 3; i++) { for (j = 0; j < 4; j++) { matrizProbabilidadNo[i][j] =
-         * (matrizFrecuenciaNo[i][j])/(sumColMatrizNo); System.out.printf("%f ",
-         * matrizProbabilidadNo[i][j]); } System.out.print("\n"); }
-         * 
-         * //Determinar factor para si se juega double factorSiJuega =
-         * determinarFactorProbabilidad(paramCielo, paramTemp, paramHumedad,
-         * paramViento, matrizProbabilidadSi, probabilidadJugar);
-         * 
-         * //Determinar facctor para no se juega double factorNoJuega =
-         * determinarFactorProbabilidad(paramCielo, paramTemp, paramHumedad,
-         * paramViento, matrizProbabilidadNo, probabilidadJugar);
-         * 
-         * //Obtener la probabilidades respectivas double probabilidadFinalSiJuega =
-         * ((factorSiJuega)/(factorSiJuega + factorNoJuega))*100; double
-         * probabilidadFinalNoJuega = ((factorNoJuega)/(factorSiJuega +
-         * factorNoJuega))*100;
-         * 
+         * Se debe obtener la suma de una columna de ambas matrices para obtener la
+         * probabilidades respectivas para cada evento
+         */
+        double sumColMatrizEmpresa1 = sumColumnas(matrizFrecuenciaEmpresa1);
+        double sumColMatrizEmpresa2 = sumColumnas(matrizFrecuenciaEmpresa2);
+        double sumColMatrizEmpresa3 = sumColumnas(matrizFrecuenciaEmpresa3);
+        double sumColMatrizEmpresa4 = sumColumnas(matrizFrecuenciaEmpresa4);
+
+       
+
+        System.out.println("------------------------------------------");
+
+        // Matriz de probabilida para Empresa 1
+        System.out.println("Matriz de probabilidad para empresa 1");
+        for (i = 0; i < 3; i++) {
+            for (j = 0; j < 6; j++) {
+                matrizProbabilidadEmpresa1[i][j] = (matrizFrecuenciaEmpresa1[i][j]) / (sumColMatrizEmpresa1);
+                System.out.printf("%f ", matrizProbabilidadEmpresa1[i][j]);
+            }
+            System.out.print("\n");
+        }
+        System.out.println("------------------------------------------");
+
+        // Matriz de probabilida para Empresa 2
+        System.out.println("Matriz de probabilidad para empresa 2");
+        for (i = 0; i < 3; i++) {
+            for (j = 0; j < 6; j++) {
+                matrizProbabilidadEmpresa2[i][j] = (matrizFrecuenciaEmpresa2[i][j]) / (sumColMatrizEmpresa2);
+                System.out.printf("%f ", matrizProbabilidadEmpresa2[i][j]);
+            }
+            System.out.print("\n");
+        }
+        System.out.println("------------------------------------------");
+
+        // Matriz de probabilida para Empresa 3
+        System.out.println("Matriz de probabilidad para empresa 3");
+        for (i = 0; i < 3; i++) {
+            for (j = 0; j < 6; j++) {
+                matrizProbabilidadEmpresa3[i][j] = (matrizFrecuenciaEmpresa3[i][j]) / (sumColMatrizEmpresa3);
+                System.out.printf("%f ", matrizProbabilidadEmpresa3[i][j]);
+            }
+            System.out.print("\n");
+        }
+        System.out.println("------------------------------------------");
+        
+        // Matriz de probabilida para Empresa 4
+        System.out.println("Matriz de probabilidad para empresa 4");
+        for (i = 0; i < 3; i++) {
+            for (j = 0; j < 6; j++) {
+                matrizProbabilidadEmpresa4[i][j] = (matrizFrecuenciaEmpresa4[i][j]) / (sumColMatrizEmpresa4);
+                System.out.printf("%f ", matrizProbabilidadEmpresa4[i][j]);
+            }
+            System.out.print("\n");
+        }
+        System.out.println("------------------------------------------");
+
+       
+         
+         //Determinar factor para Empresa 1
+         double factorEmpresa1 = determinarFactorProbabilidad(paramSatisfaccion, paramCalidad, paramResponde, paramComunicacion,
+         paramPrecio, paramAccion, matrizFrecuenciaEmpresa1, probabilidadEmpresa1);
+         
+         double factorEmpresa2 = determinarFactorProbabilidad(paramSatisfaccion, paramCalidad, paramResponde, paramComunicacion,
+         paramPrecio, paramAccion, matrizFrecuenciaEmpresa1, probabilidadEmpresa2);
+         
+         double factorEmpresa3 = determinarFactorProbabilidad(paramSatisfaccion, paramCalidad, paramResponde, paramComunicacion,
+         paramPrecio, paramAccion, matrizFrecuenciaEmpresa1, probabilidadEmpresa3);
+         
+         double factorEmpresa4 = determinarFactorProbabilidad(paramSatisfaccion, paramCalidad, paramResponde, paramComunicacion,
+         paramPrecio, paramAccion, matrizFrecuenciaEmpresa1, probabilidadEmpresa4);
+        
+         /*
+         //Determinar facctor para no se juega double factorNoJuega =
+         determinarFactorProbabilidad(paramCielo, paramTemp, paramHumedad,
+         paramViento, matrizProbabilidadNo, probabilidadJugar);
+         
+         //Obtener la probabilidades respectivas double probabilidadFinalSiJuega =
+         //((factorSiJuega)/(factorSiJuega + factorNoJuega))*100; double
+         //probabilidadFinalNoJuega = ((factorNoJuega)/(factorSiJuega +
+         //factorNoJuega))*100;
+
+         /* 
          * System.out.println("------------------------------------------");
          * System.out.printf("Probabilida que si se juegue el partido %f porciento \n"
          * ,probabilidadFinalSiJuega);
@@ -761,17 +868,23 @@ public class empresasJava {
         return total;
     }
 
-    public static double determinarFactorProbabilidad(int paramCielo, int paramTemp, int paramHumedad, int paramViento,
-            double[][] matrizObjetivo, double probTotal) {
+  
+   
+
+    
+    public static double determinarFactorProbabilidad(int paramSatisfaccion, int paramCalidad, int paramResponde, int paramComunicacion,
+           int paramPrecio, int paramAccion, double[][] matrizObjetivo, double probTotal) {
 
         double totalFactor;
 
-        double probCielo = matrizObjetivo[paramCielo - 1][0];
-        double probTemp = matrizObjetivo[paramTemp - 1][1];
-        double probHumedad = matrizObjetivo[paramHumedad - 1][2];
-        double probViento = matrizObjetivo[paramViento - 1][3];
+        double proSatisfaccion = matrizObjetivo[paramSatisfaccion - 1][0];
+        double probCalidad = matrizObjetivo[paramCalidad - 1][1];
+        double probResponde = matrizObjetivo[paramResponde - 1][2];
+        double probComunicacion = matrizObjetivo[paramComunicacion - 1][3];
+        double probPrecio = matrizObjetivo[paramPrecio - 1][3];
+        double probAccion = matrizObjetivo[paramAccion - 1][3];
 
-        totalFactor = probCielo * probTemp * probHumedad * probViento * probTotal;
+        totalFactor = proSatisfaccion * probCalidad * probResponde * probComunicacion * probPrecio * probAccion * probTotal;
         return totalFactor;
     }
 
