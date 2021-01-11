@@ -7,31 +7,12 @@ public class empresasJava {
 
     public static void main(String[] args) {
 
-        /*Parametros aceptados
-        * Satisfacción del cliente
-            *Alta: 1
-            *Media: 2
-            *Baja: 3   
-        * Calidad
-            *Alta: 1
-            *Media: 2
-            *Baja: 3 
-        * Responde necesidades del cliente
-            *Alta: 1
-            *Baja: 2 
-        * Comunicación permanente
-            *Alta: 1
-            *Baja: 2
-        * Precio
-            *Alta: 1
-            *Media: 2
-            *Baja: 3 
-        * Accion ranking
-            *Sube: 1
-            *Se mantiene: 2
-            *Baja: 3 
-        */
-
+        /*
+         * Parametros aceptados Satisfacción del cliente Alta: 1 Media: 2 Baja: 3
+         * Calidad Alta: 1 Media: 2 Baja: 3 Responde necesidades del cliente Alta: 1
+         * Baja: 2 Comunicación permanente Alta: 1 Baja: 2 Precio Alta: 1 Media: 2 Baja:
+         * 3 Accion ranking Sube: 1 Se mantiene: 2 Baja: 3
+         */
 
         /*
          * Esta matriz representa la tabla que se debe extraer de la base de datos que
@@ -47,12 +28,12 @@ public class empresasJava {
                 { 4, 3, 3, 2, 2, 3, 2 }, };
 
         // Parámetros que debe indicar el usuario que serán los que quiere averiguar
-        int paramSatisfaccion = 1; //Alta
-        int paramCalidad = 3; //Alta
-        int paramResponde = 1; //Baja
-        int paramComunicacion = 1; //
-        int paramPrecio = 1; //
-        int paramAccion = 1; //
+        int paramSatisfaccion = 1; // Alta
+        int paramCalidad = 1; // Alta
+        int paramResponde = 2; // Baja
+        int paramComunicacion = 1; // Alta
+        int paramPrecio = 2; // Media
+        int paramAccion = 1; // Sube
 
         // Probabilidad de Empresas
         int cantidadEmpresa1;
@@ -747,8 +728,6 @@ public class empresasJava {
         double sumColMatrizEmpresa3 = sumColumnas(matrizFrecuenciaEmpresa3);
         double sumColMatrizEmpresa4 = sumColumnas(matrizFrecuenciaEmpresa4);
 
-       
-
         System.out.println("------------------------------------------");
 
         // Matriz de probabilida para Empresa 1
@@ -783,7 +762,7 @@ public class empresasJava {
             System.out.print("\n");
         }
         System.out.println("------------------------------------------");
-        
+
         // Matriz de probabilida para Empresa 4
         System.out.println("Matriz de probabilidad para empresa 4");
         for (i = 0; i < 3; i++) {
@@ -795,44 +774,35 @@ public class empresasJava {
         }
         System.out.println("------------------------------------------");
 
-       
-         
-         //Determinar factor para Empresa 1
-         double factorEmpresa1 = determinarFactorProbabilidad(paramSatisfaccion, paramCalidad, paramResponde, paramComunicacion,
-         paramPrecio, paramAccion, matrizFrecuenciaEmpresa1, probabilidadEmpresa1);
-         
-         double factorEmpresa2 = determinarFactorProbabilidad(paramSatisfaccion, paramCalidad, paramResponde, paramComunicacion,
-         paramPrecio, paramAccion, matrizFrecuenciaEmpresa1, probabilidadEmpresa2);
-         
-         double factorEmpresa3 = determinarFactorProbabilidad(paramSatisfaccion, paramCalidad, paramResponde, paramComunicacion,
-         paramPrecio, paramAccion, matrizFrecuenciaEmpresa1, probabilidadEmpresa3);
-         
-         double factorEmpresa4 = determinarFactorProbabilidad(paramSatisfaccion, paramCalidad, paramResponde, paramComunicacion,
-         paramPrecio, paramAccion, matrizFrecuenciaEmpresa1, probabilidadEmpresa4);
-        
-         /*
-         //Determinar facctor para no se juega double factorNoJuega =
-         determinarFactorProbabilidad(paramCielo, paramTemp, paramHumedad,
-         paramViento, matrizProbabilidadNo, probabilidadJugar);
-         
-         //Obtener la probabilidades respectivas double probabilidadFinalSiJuega =
-         //((factorSiJuega)/(factorSiJuega + factorNoJuega))*100; double
-         //probabilidadFinalNoJuega = ((factorNoJuega)/(factorSiJuega +
-         //factorNoJuega))*100;
+        // Determinar factor para Empresa 1
+        double factorEmpresa1 = determinarFactorProbabilidad(paramSatisfaccion, paramCalidad, paramResponde,
+                paramComunicacion, paramPrecio, paramAccion, matrizProbabilidadEmpresa1, probabilidadEmpresa1);
 
-         /* 
-         * System.out.println("------------------------------------------");
-         * System.out.printf("Probabilida que si se juegue el partido %f porciento \n"
-         * ,probabilidadFinalSiJuega);
-         * System.out.printf("Probabilida que no se juegue el partido %f porciento \n"
-         * ,probabilidadFinalNoJuega);
-         * 
-         * //Comparar y entregar el resultado final if(probabilidadFinalSiJuega >
-         * probabilidadFinalNoJuega){
-         * System.out.println("Finalmente, el partido se juega"); }else{
-         * System.out.println("Finalmente, el partido no se juega"); }
-         * 
-         */
+        double factorEmpresa2 = determinarFactorProbabilidad(paramSatisfaccion, paramCalidad, paramResponde,
+                paramComunicacion, paramPrecio, paramAccion, matrizProbabilidadEmpresa2, probabilidadEmpresa2);
+
+        double factorEmpresa3 = determinarFactorProbabilidad(paramSatisfaccion, paramCalidad, paramResponde,
+                paramComunicacion, paramPrecio, paramAccion, matrizProbabilidadEmpresa3, probabilidadEmpresa3);
+
+        double factorEmpresa4 = determinarFactorProbabilidad(paramSatisfaccion, paramCalidad, paramResponde,
+                paramComunicacion, paramPrecio, paramAccion, matrizProbabilidadEmpresa4, probabilidadEmpresa4);
+
+     
+
+        double sumaTotalFactores = factorEmpresa1 + factorEmpresa2 + factorEmpresa3 + factorEmpresa4;      
+
+        double probabilidadFinalEmpresa1 = (factorEmpresa1/sumaTotalFactores)*100;
+        double probabilidadFinalEmpresa2 = (factorEmpresa2/sumaTotalFactores)*100;
+        double probabilidadFinalEmpresa3 = (factorEmpresa3/sumaTotalFactores)*100;
+        double probabilidadFinalEmpresa4 = (factorEmpresa4/sumaTotalFactores)*100;
+
+
+        System.out.printf("Probabilidad de que pertenezcan a empresa 1: %f porciento \n", probabilidadFinalEmpresa1);
+        System.out.printf("Probabilidad de que pertenezcan a empresa 2: %f porciento \n", probabilidadFinalEmpresa2);
+        System.out.printf("Probabilidad de que pertenezcan a empresa 3: %f porciento \n", probabilidadFinalEmpresa3);
+        System.out.printf("Probabilidad de que pertenezcan a empresa 4: %f porciento \n", probabilidadFinalEmpresa4);
+        
+        
 
     }
 
@@ -868,12 +838,8 @@ public class empresasJava {
         return total;
     }
 
-  
-   
-
-    
-    public static double determinarFactorProbabilidad(int paramSatisfaccion, int paramCalidad, int paramResponde, int paramComunicacion,
-           int paramPrecio, int paramAccion, double[][] matrizObjetivo, double probTotal) {
+    public static double determinarFactorProbabilidad(int paramSatisfaccion, int paramCalidad, int paramResponde,
+            int paramComunicacion, int paramPrecio, int paramAccion, double[][] matrizObjetivo, double probTotal) {
 
         double totalFactor;
 
@@ -881,10 +847,11 @@ public class empresasJava {
         double probCalidad = matrizObjetivo[paramCalidad - 1][1];
         double probResponde = matrizObjetivo[paramResponde - 1][2];
         double probComunicacion = matrizObjetivo[paramComunicacion - 1][3];
-        double probPrecio = matrizObjetivo[paramPrecio - 1][3];
-        double probAccion = matrizObjetivo[paramAccion - 1][3];
+        double probPrecio = matrizObjetivo[paramPrecio - 1][4];
+        double probAccion = matrizObjetivo[paramAccion - 1][5];
 
-        totalFactor = proSatisfaccion * probCalidad * probResponde * probComunicacion * probPrecio * probAccion * probTotal;
+        totalFactor = proSatisfaccion * probCalidad * probResponde * probComunicacion * probPrecio * probAccion
+                * probTotal;
         return totalFactor;
     }
 
