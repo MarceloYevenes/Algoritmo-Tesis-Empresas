@@ -1,7 +1,7 @@
-# Ejemplo-Empresa-Parametros pertenece  
+# Ejemplo-Empresa-Acción en el ranking  
 ## Instrucciones   
-1. Para usar el código simplemente ejecutar en la misma carpeta del código <strong>javac golfJava.java</strong> 
-2. Luego ejecutar <strong>java golfJava</strong> 
+1. Para usar el código simplemente ejecutar en la misma carpeta del código <strong>javac empresasJava.java</strong> 
+2. Luego ejecutar <strong>java empresasJava</strong> 
 
 Nota: El código puede ser abierto con algún IDE que soporte el lenguaje, en este caso fue ejecutado con la terminal de Mac 11.2 Big Sur  
 
@@ -12,6 +12,7 @@ Para buscar la probabilidad de que ocurra otro evento simplemente se deben modif
 * paramResponde 
 * paramComunicacion 
 * paramPrecio  
+* paramAccion
 
 Cada una de estas variables tiene opciones válidas para que el código funcione, las opciones disponibles por variable son:  
 * paramSatisfaccion = 1(Alta), 2(Media), 3(Baja).
@@ -19,5 +20,6 @@ Cada una de estas variables tiene opciones válidas para que el código funcione
 * paramResponde =  1(Alta), 2(Baja). 
 * paramComunicacion = 1(Alta), 2(Baja).
 * paramPrecio = 1(Alta), 2(Media), 3(Baja).
+* paramAccion = 1(Sube), 2(Se mantiene), 3(Baja).
 
-Cada combinación producira una probabilidad distinta de sucesos, que determinara si la empresa sube, baja o se mantiene en el ranking, si se desea modificar los datos de entrenamiento, simplemente se debe modificar la matriz inicial llamada matrizValores, agregando filas extras o borrando algunas.  
+Cada combinación producira una probabilidad distinta de sucesos, que determinara a que empresa pertenecen los parametros, si se desea modificar los datos de entrenamiento, simplemente se debe modificar la matriz inicial llamada matrizValores, agregando filas extras o borrando algunas.  
