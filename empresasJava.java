@@ -28,12 +28,12 @@ public class empresasJava {
                 { 4, 3, 3, 2, 2, 3, 2 }, };
 
         // Parámetros que debe indicar el usuario que serán los que quiere averiguar
-        int paramSatisfaccion = 1; // Alta
-        int paramCalidad = 1; // Alta
-        int paramResponde = 2; // Baja
-        int paramComunicacion = 1; // Alta
-        int paramPrecio = 2; // Media
-        int paramAccion = 1; // Sube
+        int paramSatisfaccion = 1; 
+        int paramCalidad = 1; 
+        int paramResponde = 2; 
+        int paramComunicacion = 1; 
+        int paramPrecio = 2; 
+        int paramAccion = 1; 
 
         // Probabilidad de Empresas
         int cantidadEmpresa1;
@@ -787,22 +787,17 @@ public class empresasJava {
         double factorEmpresa4 = determinarFactorProbabilidad(paramSatisfaccion, paramCalidad, paramResponde,
                 paramComunicacion, paramPrecio, paramAccion, matrizProbabilidadEmpresa4, probabilidadEmpresa4);
 
-     
+        double sumaTotalFactores = factorEmpresa1 + factorEmpresa2 + factorEmpresa3 + factorEmpresa4;
 
-        double sumaTotalFactores = factorEmpresa1 + factorEmpresa2 + factorEmpresa3 + factorEmpresa4;      
-
-        double probabilidadFinalEmpresa1 = (factorEmpresa1/sumaTotalFactores)*100;
-        double probabilidadFinalEmpresa2 = (factorEmpresa2/sumaTotalFactores)*100;
-        double probabilidadFinalEmpresa3 = (factorEmpresa3/sumaTotalFactores)*100;
-        double probabilidadFinalEmpresa4 = (factorEmpresa4/sumaTotalFactores)*100;
-
+        double probabilidadFinalEmpresa1 = (factorEmpresa1 / sumaTotalFactores) * 100;
+        double probabilidadFinalEmpresa2 = (factorEmpresa2 / sumaTotalFactores) * 100;
+        double probabilidadFinalEmpresa3 = (factorEmpresa3 / sumaTotalFactores) * 100;
+        double probabilidadFinalEmpresa4 = (factorEmpresa4 / sumaTotalFactores) * 100;
 
         System.out.printf("Probabilidad de que pertenezcan a empresa 1: %f porciento \n", probabilidadFinalEmpresa1);
         System.out.printf("Probabilidad de que pertenezcan a empresa 2: %f porciento \n", probabilidadFinalEmpresa2);
         System.out.printf("Probabilidad de que pertenezcan a empresa 3: %f porciento \n", probabilidadFinalEmpresa3);
         System.out.printf("Probabilidad de que pertenezcan a empresa 4: %f porciento \n", probabilidadFinalEmpresa4);
-        
-        
 
     }
 
